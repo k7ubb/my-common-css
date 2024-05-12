@@ -1,0 +1,186 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+:root {
+	--color-background: #ffffff;
+	--color-background2: #dbe3e7;
+	--color-main: #779bc8;
+	--color-main2: #a7d3e3;
+	--color-main3: #e8f5f8;
+	--color-button: #ffffff;
+	--color-button-hover: #85c7df;
+	--color-text-main: #333333;
+	--color-text-reversal: #ffffff;
+	--width-main: 1200px;
+}
+
+html, body {
+	height: 100%;
+}
+
+* {
+	font-family: "Noto Sans JP", sans-serif;
+	color: var(--color-text-main);
+}
+
+body {
+	background: var(--color-background);
+	margin-bottom: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+/* -------- header -------- */
+
+.header {
+	margin: -8px -8px 100px;
+	padding: 8px;
+	background: var(--color-main);
+}
+
+.header > div {
+	margin: 0 auto;
+	max-width: var(--width-main);
+}
+
+.header a.sitelogo {
+	display: block;
+	height: 40px;
+	padding-left: 50px;
+	color: var(--color-text-reversal);
+	text-decoration: none;
+	line-height: 48px;
+	font-size: 20px;
+	background: no-repeat left/contain url(bird.png);
+}
+
+
+/* -------- main -------- */
+
+.main {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	min-height: calc(100% - 324px);
+}
+
+.main > div {
+	margin: 0 auto;
+	max-width: var(--width-main);
+}
+
+p, li {
+	line-height: 2em;
+}
+
+h1 {
+	margin-top: 0;
+	color: var(--color-main);
+	font-size: 180%;
+}
+
+h1 span.update {
+	display: block;
+	font-size: 50%;
+	font-weight: normal;
+}
+
+h2 {
+	margin-top: 64px;
+	color: var(--color-main);
+}
+
+h3 {
+	margin-top: 0;
+}
+
+img.responsive {
+	width: 100%;
+}
+
+div.info {
+	background: var(--color-main3);
+	padding: 8px;
+	margin-bottom: 64px;
+	border-radius: 8px;
+}
+
+a.button {
+	padding: 8px 16px;
+	border-radius: 4px;
+	color: var(--color-text-reversal);
+	text-decoration: none;
+	background: #1968e5;
+}
+
+a.button:hover {
+	background: #17459c;
+}
+
+hr.spacing {
+	border: none;
+	height: 100px;
+}
+
+hr.spacing_small {
+	border: none;
+	height: 50px;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+}
+
+td, th {
+	padding: 4px 16px;
+	border: 1px solid #ccc;
+}
+
+th {
+	background: var(--color-main2);
+}
+
+/* -------- footer -------- */
+
+.footer {
+	bottom: 0;
+	margin: 128px -8px -8px;
+	padding: 8px;
+	background: var(--color-main);
+}
+
+
+.footer > div {
+	margin: 0 auto;
+	color: var(--color-text-reversal);
+	max-width: var(--width-main);
+}
+
+.footer a {
+	color: var(--color-text-reversal);
+	text-decoration: none;
+}
+
+/* -------- flex -------- */
+
+@media screen and (min-width:800px) {
+	div.flex {
+		display: flex;
+		gap: 32px;
+	}
+	
+	div.flex > * {
+		flex: 1;
+	}
+	
+	div.flex-sized {
+		flex: initial;
+	}
+}
+
+@media screen and (max-width:801px) {
+	div.flex-sized {
+		width: 100% !important;
+	}
+}
+
