@@ -3,10 +3,7 @@
 
 :root {
 	--color-background: #ffffff;
-	--color-background2: #dbe3e7;
 	--color-main: #779bc8;
-	--color-main2: #a7d3e3;
-	--color-main3: #e8f5f8;
 	--color-button: #ffffff;
 	--color-button-hover: #85c7df;
 	--color-text-main: #333333;
@@ -234,20 +231,6 @@ a.download_button:hover {
 a.download_button i {
 	color: var(--color-text-reversal);
 	margin-right: 4px;
-}
-
-table {
-	border-collapse: collapse;
-	border: 1px solid var(--color-main2);
-}
-
-td, th {
-	padding: 4px 16px;
-	border: 1px solid var(--color-main2);
-}
-
-th {
-	background: var(--color-main2);
 }
 
 form dt {
