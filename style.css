@@ -63,17 +63,13 @@ header a.sitename i {
 	color: var(--color-text-reversal);
 }
 
-header input[type="checkbox"] {
-	display: none;
-}
-
 @media screen and (min-width: 800px) {
-	header label {
+	header details {
 		display: none;
 	}
 	
 	header nav {
-		display: flex !important;
+		display: flex;
 		margin-left: auto;
 	}
 	
@@ -87,7 +83,15 @@ header input[type="checkbox"] {
 }
 
 @media screen and (max-width: 801px) {
-	header label::before {
+	header nav {
+		display: none;
+	}
+	
+	header details {
+		display: contents;
+	}
+	
+	header details summary::before {
 		content: "\f0c9";
 		font-family: "Font Awesome 5 Free";
 		font-weight: 900;
@@ -95,7 +99,7 @@ header input[type="checkbox"] {
 		color: var(--color-text-reversal);
 	}
 	
-	header label {
+	header details summary {
 		display: block;
 		margin-left: auto;
 		border: 1px solid var(--color-text-reversal);
@@ -107,11 +111,7 @@ header input[type="checkbox"] {
 		text-align: center;
 	}
 	
-	header nav {
-		display: none;
-	}
-	
-	header label:has(:checked) + nav {
+	header details summary + * {
 		display: block;
 		position: absolute;
 		top: 56px;
@@ -119,7 +119,7 @@ header input[type="checkbox"] {
 		background: var(--color-main);
 	}
 	
-	header nav a {
+	header details summary + * a {
 		display: block;
 		text-decoration: none;
 		color: var(--color-text-reversal);
