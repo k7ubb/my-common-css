@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap);
+@import url(https://use.fontawesome.com/releases/v6.2.0/css/all.css);
 
 :root {
 	--color-background: #ffffff;
@@ -19,54 +20,169 @@ html, body {
 
 * {
 	font-family: "Noto Sans JP", sans-serif;
+	font-display: swap;
 	color: var(--color-text-main);
 }
 
 body {
 	background: var(--color-background);
 	margin-bottom: 0;
+	text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 
+/* -------- structure -------- */
 
-/* -------- header -------- */
-
-.header {
-	margin: -8px -8px 100px;
-	padding: 8px;
+header {
+	display: flex;
+	margin: -8px -8px 0;
+	padding: 8px max(8px, calc((100% - var(--width-main)) / 2 + 8px));
 	background: var(--color-main);
-}
-
-.header > div {
-	margin: 0 auto;
 	max-width: var(--width-main);
 }
 
-.header a.sitelogo {
-	display: block;
+header a.sitename {
+	display: flex;
 	height: 40px;
-	padding-left: 50px;
-	color: var(--color-text-reversal);
-	text-decoration: none;
 	line-height: 48px;
 	font-size: 20px;
-	background: no-repeat left/contain url(bird.png);
+	text-decoration: none;
+	color: var(--color-text-reversal);
 }
 
-
-/* -------- main -------- */
-
-.main {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	min-height: calc(100% - 324px);
+header a.sitename img {
+	height: 100%;
+	margin-right: 10px;
 }
 
-.main > div {
-	margin: 0 auto;
+header a.sitename i {
+	height: 40px;
+	line-height: 48px;
+	font-size: 30px;
+	margin-right: 10px;
+	color: var(--color-text-reversal);
+}
+
+header input[type="checkbox"] {
+	display: none;
+}
+
+@media screen and (min-width: 800px) {
+	header label {
+		display: none;
+	}
+	
+	header nav {
+		display: flex !important;
+		margin-left: auto;
+	}
+	
+	header nav a {
+		margin-left: 16px;
+		height: 40px;
+		line-height: 48px;
+		text-decoration: none;
+		color: var(--color-text-reversal);
+	}
+}
+
+@media screen and (max-width: 801px) {
+	header label::before {
+		content: "\f0c9";
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		font-size: 24px;
+		color: var(--color-text-reversal);
+	}
+	
+	header label {
+		display: block;
+		margin-left: auto;
+		border: 1px solid var(--color-text-reversal);
+		border-radius: 2px;
+		width: 40px;
+		height: 32px;
+		line-height: 32px;
+		margin-top: 4px;
+		text-align: center;
+	}
+	
+	header nav {
+		display: none;
+	}
+	
+	header label:has(:checked) + nav {
+		display: block;
+		position: absolute;
+		top: 56px;
+		right: 0;
+		background: var(--color-main);
+	}
+	
+	header nav a {
+		display: block;
+		text-decoration: none;
+		color: var(--color-text-reversal);
+		margin: 8px 16px;
+	}
+}
+
+main {
+	margin: 100px 0;
+	padding: 0 calc((100% - var(--width-main)) / 2);
 	max-width: var(--width-main);
+	overflow: hidden;
+	min-height: calc(100% - 295px);
 }
+
+footer {
+	margin: 0 -8px -8px;
+	padding: 8px max(8px, calc((100% - var(--width-main)) / 2 + 8px));
+	max-width: var(--width-main);
+	background: var(--color-main);
+	color: var(--color-text-reversal);
+}
+
+footer a {
+	color: var(--color-text-reversal);
+}
+
+footer a.icon::after {
+	content: "\f08e";
+	margin-left: 4px;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+footer i {
+	color: var(--color-text-reversal);
+	margin-left: 2px;
+}
+
+/* -------- flex -------- */
+
+@media screen and (min-width:800px) {
+	.flex {
+		display: flex;
+		gap: 32px;
+	}
+	
+	.flex > * {
+		flex: 1;
+	}
+	
+	.flex .sized {
+		flex: initial;
+	}
+}
+
+@media screen and (max-width:801px) {
+	.flex .sized {
+		width: 100% !important;
+	}
+}
+
+/* -------- elements -------- */
 
 p, li {
 	line-height: 2em;
@@ -78,8 +194,7 @@ h1 {
 	font-size: 180%;
 }
 
-h1 span.update {
-	display: block;
+h1 .update {
 	font-size: 50%;
 	font-weight: normal;
 }
@@ -104,7 +219,7 @@ div.info {
 	border-radius: 8px;
 }
 
-a.button {
+a.download_button {
 	padding: 8px 16px;
 	border-radius: 4px;
 	color: var(--color-text-reversal);
@@ -112,75 +227,52 @@ a.button {
 	background: #1968e5;
 }
 
-a.button:hover {
+a.download_button:hover {
 	background: #17459c;
 }
 
-hr.spacing {
-	border: none;
-	height: 100px;
-}
-
-hr.spacing_small {
-	border: none;
-	height: 50px;
+a.download_button i {
+	color: var(--color-text-reversal);
+	margin-right: 4px;
 }
 
 table {
 	border-collapse: collapse;
-	border: 1px solid #ccc;
+	border: 1px solid var(--color-main2);
 }
 
 td, th {
 	padding: 4px 16px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--color-main2);
 }
 
 th {
 	background: var(--color-main2);
 }
 
-/* -------- footer -------- */
+form dt {
+	float: left;
+}
 
-.footer {
-	bottom: 0;
-	margin: 128px -8px -8px;
-	padding: 8px;
+form dd {
+	margin-left: 140px;
+	margin-bottom: 24px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]) {
+	font-size: 1em;
+	width: 200px;
+}
+
+input[type="submit"] {
+	-webkit-apperapance: none;
+	padding: 4px 12px;
+	font-size: 16px;
+	border-style: none;
+	border-radius: 4px;
+	background: var(--color-button-hover);
+}
+
+input[type="submit"]:hover {
 	background: var(--color-main);
 }
-
-
-.footer > div {
-	margin: 0 auto;
-	color: var(--color-text-reversal);
-	max-width: var(--width-main);
-}
-
-.footer a {
-	color: var(--color-text-reversal);
-	text-decoration: none;
-}
-
-/* -------- flex -------- */
-
-@media screen and (min-width:800px) {
-	div.flex {
-		display: flex;
-		gap: 32px;
-	}
-	
-	div.flex > * {
-		flex: 1;
-	}
-	
-	div.flex-sized {
-		flex: initial;
-	}
-}
-
-@media screen and (max-width:801px) {
-	div.flex-sized {
-		width: 100% !important;
-	}
-}
-
