@@ -9,6 +9,9 @@
 	--color-text-main: #333333;
 	--color-text-reversal: #ffffff;
 	--width-main: 1200px;
+	--height-header: 56px;
+	--height-footer: 40px;
+	--padding-y-main: 100px;
 }
 
 html, body {
@@ -17,7 +20,6 @@ html, body {
 
 * {
 	font-family: "Noto Sans JP", sans-serif;
-	font-display: swap;
 	color: var(--color-text-main);
 }
 
@@ -35,7 +37,8 @@ header {
 	margin: -8px -8px 0;
 	padding: 8px max(8px, calc((100% - var(--width-main)) / 2 + 8px));
 	background: var(--color-main);
-	max-width: var(--width-main);
+	height: var(--height-header);
+	box-sizing: border-box;
 }
 
 header a.sitename {
@@ -125,19 +128,20 @@ header input[type="checkbox"] {
 }
 
 main {
-	margin: 100px 0;
+	margin: var(--padding-y-main) 0;
 	padding: 0 calc((100% - var(--width-main)) / 2);
-	max-width: var(--width-main);
 	overflow: hidden;
-	min-height: calc(100% - 295px);
+	min-height: calc(100% - var(--height-header) - var(--height-footer) - var(--padding-y-main) * 2);
+	box-sizing: border-box;
 }
 
 footer {
 	margin: 0 -8px -8px;
 	padding: 8px max(8px, calc((100% - var(--width-main)) / 2 + 8px));
-	max-width: var(--width-main);
 	background: var(--color-main);
 	color: var(--color-text-reversal);
+	height: var(--height-footer);
+	box-sizing: border-box;
 }
 
 footer a {
@@ -197,8 +201,11 @@ h1 .update {
 }
 
 h2 {
-	margin-top: 64px;
 	color: var(--color-main);
+}
+
+h1 ~ h2 {
+	margin-top: 64px;
 }
 
 h3 {
