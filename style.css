@@ -204,7 +204,7 @@ h2 {
 	color: var(--color-main);
 }
 
-h1 ~ h2 {
+h1 ~ h2, h2 ~ h2 {
 	margin-top: 64px;
 }
 
