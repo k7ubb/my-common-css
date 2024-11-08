@@ -263,7 +263,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="h
 	width: 200px;
 }
 
-input[type="submit"] {
+input[type="button"], input[type="submit"] {
 	-webkit-apperapance: none;
 	padding: 4px 12px;
 	font-size: 16px;
@@ -272,6 +272,6 @@ input[type="submit"] {
 	background: var(--color-button-hover);
 }
 
-input[type="submit"]:hover {
+input[type="button"]:hover, input[type="submit"]:hover {
 	background: var(--color-main);
 }
