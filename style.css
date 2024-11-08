@@ -160,6 +160,15 @@ footer i {
 	margin-left: 2px;
 }
 
+/* -------- modal dialog -------- */
+dialog {
+	padding: 0;
+}
+
+dialog > div {
+	padding: 16px;
+}
+
 /* -------- flex -------- */
 
 @media screen and (min-width:800px) {
