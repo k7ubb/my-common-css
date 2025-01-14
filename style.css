@@ -110,6 +110,10 @@ header a.sitename i {
 		text-align: center;
 	}
 	
+	header details summary::-webkit-details-marker {
+		display: none;
+	}
+	
 	header details summary + * {
 		display: block;
 		position: absolute;
